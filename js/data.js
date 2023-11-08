@@ -30,8 +30,8 @@ const DESCRIPTIONS = [
 const PUBLISHED_PHOTOS_COUNT = 25;
 const MAX_COMMENTS_COUNT = 30;
 
-const createRandomPhotoId = createRandomRangeGenerator(0, PUBLISHED_PHOTOS_COUNT);
-const createRandomPhotoUrlId = createRandomRangeGenerator(0, PUBLISHED_PHOTOS_COUNT);
+const createRandomPhotoId = createRandomRangeGenerator(1, PUBLISHED_PHOTOS_COUNT);
+const createRandomPhotoUrlId = createRandomRangeGenerator(1, PUBLISHED_PHOTOS_COUNT);
 const generateCommentId = getId();
 
 const createComment = () => ({
