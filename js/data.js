@@ -36,13 +36,14 @@ const generateCommentId = getId();
 
 const createComment = () => ({
   id: generateCommentId(),
-  avatar: `img/avatar${ getRandomInteger(1, 6) }.svg`,
+  avatar: `img/avatar-${ getRandomInteger(1, 6) }.svg`,
   message: getRandomArrayItem(MESSAGES),
   name: getRandomArrayItem(NAMES),
 });
 
 const createPhoto = () => {
-  const comments = Array.from({ length: getRandomInteger(0, MAX_COMMENTS_COUNT) })
+  const comments = Array
+  .from({ length: getRandomInteger(0, MAX_COMMENTS_COUNT) })
   .map(createComment);
 
   return {
@@ -54,8 +55,8 @@ const createPhoto = () => {
   };
 };
 
-Array
+const createPhotos = () => Array
 .from({length: PUBLISHED_PHOTOS_COUNT})
 .map(createPhoto);
 
-export {createPhoto};
+export {createPhotos};

@@ -41,4 +41,12 @@ const getRandomArrayItem = function (items) {
   return items[randomIndex];
 };
 
-export {getRandomInteger, getId, createRandomRangeGenerator, getRandomArrayItem};
+const isEscapeKey = ({key}) => key === 'Escape';
+
+export {
+  getRandomInteger,
+  getId,
+  createRandomRangeGenerator,
+  getRandomArrayItem,
+  isEscapeKey,
+};
