@@ -1,8 +1,8 @@
-import { getPhotoById } from "./picture-previews";
-import { isEscapeKey} from "./util";
+import {getPhotoById } from "./picture-previews.js";
+import {isEscapeKey} from "./util.js";
 
-const pictureModalEl = document.querySelector('big-picture');
-const imageEl = pictureModalEl.querySelector('.big-picture__img img');
+const pictureModalEl = document.querySelector('.big-picture');
+const imageEl = pictureModalEl.querySelector('.big-picture__img');
 const likesEl = pictureModalEl.querySelector('.likes-count');
 const commentCountEl = pictureModalEl.querySelector('.social__comment-count');
 const shownCommentCountEl = commentCountEl.querySelector('.social__comment-shown-count');
@@ -49,7 +49,7 @@ const renderPicture = ({url, likes, comments, description}) => {
   imageEl.src = url;
   likesEl.textContent = likes;
   shownCommentCountEl.textContent = '?';
-  totalCommentCountEl.textContent = photo.comments.length.toString(10);
+  totalCommentCountEl.textContent = comments.length.toString(10);
 
   commentsContainerEl.innerHTML = '';
   commentsContainerEl.append(renderComments(comments));
