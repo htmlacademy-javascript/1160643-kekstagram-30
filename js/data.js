@@ -42,9 +42,7 @@ const createComment = () => ({
 });
 
 const createPhoto = () => {
-  const comments = Array
-  .from({ length: getRandomInteger(0, MAX_COMMENTS_COUNT) })
-  .map(createComment);
+  const comments = Array.from({ length: getRandomInteger(0, MAX_COMMENTS_COUNT) }).map(createComment);
 
   return {
     id: createRandomPhotoId(),

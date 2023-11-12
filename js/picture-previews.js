@@ -4,21 +4,21 @@ let photos = createPhotos();
 let pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
 
 
-photos.forEach(({id, url, description, likes, comment}) => {
-  const pictureElement = pictureTemplate.cloneNode(true);
-  const pictureImage = pictureElement.querySelector('.picture__img');
-  const pictureLikes = pictureElement.querySelector('.picture__likes');
-  const pictureComments = pictureElement.querySelector('.picture__comments');
+const createPreview = ({ id, url, description, likes, comments }) => {
+  const pictureEl = pictureTemplate.cloneNode(true);
+  const pictureImage = pictureEl.querySelector('.picture__img');
+  const pictureLikes = pictureEl.querySelector('.picture__likes');
+  const pictureComments = pictureEl.querySelector('.picture__comments');
 
-  pictureElement.dataset.pictureId = id;
+  pictureEl.dataset.pictureId = id;
   pictureImage.src = url;
   pictureImage.alt = description;
 
   pictureLikes.textContent = likes;
-  pictureComments.textContent = comment.length;
+  pictureComments.textContent = comments.length;
 
-  return pictureElement;
-});
+  return pictureEl;
+};
 
 const createPhotoPreviews = () => {
   const picturesFragment = document.createDocumentFragment();
